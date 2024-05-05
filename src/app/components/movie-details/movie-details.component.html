@@ -1,0 +1,13 @@
+<div *ngIf="movie">
+    <h2>{{ movie.title }}</h2>
+    <p><strong>Год выпуска:</strong> {{ movie.releaseYear }}</p>
+    <p><strong>Продолжительность:</strong> {{ movie.duration }} мин.</p>
+    <p><strong>Мировая касса:</strong> {{ movie.worldwideGross | currency:'USD':'symbol':'1.2-2' }}</p>
+    <!-- <p><strong>Режиссер:</strong> {{ movie.director.directorName }}</p> -->
+    <p><strong>Актеры:</strong></p>
+    <!-- <ul>
+      <li *ngFor="let actor of movie.actors">{{ actor.actorName }}</li>
+    </ul> -->
+    <!-- Дополнительная информация о фильме -->
+  </div>
+  
