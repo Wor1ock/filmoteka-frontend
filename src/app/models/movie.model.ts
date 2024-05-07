@@ -7,6 +7,6 @@ export interface Movie {
   releaseYear: number;
   worldwideGross: number;
   duration: number;
-  director: Director;
-  actors: Actor[];
+  director?: Director;
+  actors?: Actor[];
 }

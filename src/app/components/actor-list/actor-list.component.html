@@ -1,0 +1,17 @@
+<h1 class="mt-3" style="font-size: 40px; color: white;">Актёры</h1>
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let actor of actors">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ actor.actorName }}</h5>
+        <p class="card-text" *ngIf="actor.birthdate">Дата рождения: {{ actor.birthdate | date }}</p>
+        <p class="card-text" *ngIf="actor.country">Страна: {{ actor.country }}</p>
+        <p class="card-text" *ngIf="actor.bio">{{ actor.bio }}</p>
+        <p class="card-text" *ngIf="actor.movies && actor.movies.length > 0">Фильмы:</p>
+        <ul class="card-text" *ngIf="actor.movies && actor.movies.length > 0">
+          <li *ngFor="let movie of actor.movies">{{ movie.title }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

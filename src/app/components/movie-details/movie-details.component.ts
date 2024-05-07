@@ -9,7 +9,7 @@ import { MovieService } from '../../services/movie.service';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
-  movie: Movie | null = null;
+  movie!: Movie;
 
   constructor(private route: ActivatedRoute, private movieService: MovieService) { }
 
@@ -21,6 +21,7 @@ export class MovieDetailsComponent implements OnInit {
     const movieId = this.route.snapshot.paramMap.get('movieId');
     if (movieId !== null) {
       this.movieService.getMovieById(+movieId).subscribe(movie => this.movie = movie);
+      console.log(this.movie);
     }
   }
 }

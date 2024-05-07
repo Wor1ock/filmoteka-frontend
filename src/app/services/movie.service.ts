@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from '../models/movie.model';
+import { Director } from '../models/director.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class MovieService {
   deleteMovie(id: number): Observable<any> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete(url);
+  }
+
+  editMovie(movieId: number, updatedMovieData: any): Observable<Movie> {
+    return this.http.put<Movie>(`${this.baseUrl}/${movieId}`, updatedMovieData);
   }
 }

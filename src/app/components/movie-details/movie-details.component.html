@@ -1,13 +1,31 @@
-<div *ngIf="movie">
-    <h2>{{ movie.title }}</h2>
-    <p><strong>Год выпуска:</strong> {{ movie.releaseYear }}</p>
-    <p><strong>Продолжительность:</strong> {{ movie.duration }} мин.</p>
-    <p><strong>Мировая касса:</strong> {{ movie.worldwideGross | currency:'USD':'symbol':'1.2-2' }}</p>
-    <!-- <p><strong>Режиссер:</strong> {{ movie.director.directorName }}</p> -->
-    <p><strong>Актеры:</strong></p>
-    <!-- <ul>
-      <li *ngFor="let actor of movie.actors">{{ actor.actorName }}</li>
-    </ul> -->
-    <!-- Дополнительная информация о фильме -->
+<div *ngIf="movie" class="container my-5">
+  <div class="row">
+    <div class="col-xl-6">
+      <h2 class="text-light border rounded p-3">{{ movie.title }}</h2>
+      <h3 class="text-light p-3">Год выпуска: </h3>
+        <ul class="list-group">
+          <li class="list-group-item">{{ movie.releaseYear }}</li>
+      </ul>
+      
+      <h3 class="text-light p-3">Продолжительность: </h3>
+        <ul class="list-group">
+          <li class="list-group-item">{{ movie.duration }}</li>
+      </ul>
+
+      <h3 class="text-light p-3">Мировая касса </h3>
+        <ul class="list-group">
+          <li class="list-group-item">{{ movie.worldwideGross }}</li>
+      </ul>
+
+      <h3 class="text-light p-3">Режиссёр: </h3>
+        <ul class="list-group">
+          <li class="list-group-item">{{ movie.director ? movie.director.directorName : 'Неизвестно' }}</li>
+      </ul>
+
+      <h3 class="text-light p-3">Актёры:</h3>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let actor of movie.actors">{{ actor.actorName }}</li>
+      </ul>
+    </div>
   </div>
-  
+</div>

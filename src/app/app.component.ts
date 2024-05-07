@@ -8,7 +8,7 @@ import { MovieService } from './services/movie.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  movies: Movie[] = []; // Свойство для хранения списка фильмов
+  movies: Movie[] = [];
 
   constructor(private movieService: MovieService) {}
 
